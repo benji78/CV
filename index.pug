@@ -1,0 +1,325 @@
+mixin progress(progress)
+  .extra-details
+    .extra-details_progress(style={width: progress})
+
+mixin skill(title, progress)
+  .extra
+    .extra-info
+      b.d-block= title
+      .mb-3
+        block
+    //- +progress(progress)
+
+mixin stylesheet(href)
+  link(rel='stylesheet' href=href)
+
+
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    title CV Benjamin Bordes
+    link(rel='icon', href='/images/favicon.svg')
+    //- +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css')
+    +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css')
+    +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/solid.min.css')
+    //- +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/regular.min.css')
+    +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/brands.min.css')
+    //- +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.min.css')
+    +stylesheet('./paper.min.css')
+    +stylesheet('./styles.min.css')
+    +stylesheet('./styles.css')
+
+  body.A4.flex-column
+    .sheet
+      button.btn.btn-print.btn-sm.btn-light(onClick='window.print()')
+        | #[i.fa-solid.fa-print] Print
+      button.btn.btn-print.btn-sm.btn-light(onClick='window.location="/CV Benjamin Bordes 2023.pdf"', style='top:3.4rem')
+        | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
+
+      .resume
+        #sidebar(style='width:30%')
+          img#profile(src='images/Benjamin%20Bordes.jpg', alt='Benjamin Bordes')
+
+          h3.bandeau.text-center Benjamin Bordes
+          .text-center
+            .info-item
+              span.info-label
+                i.fa-solid.fa-location-arrow
+              span Versailles, France
+            .info-item
+              span.info-label
+                i.fa-solid.fa-envelope
+              a(href='mailto:bbordes@protonmail.com' style='text-decoration:none;color:navy') bbordes@pm.me
+            .info-item
+              span.info-label
+                i.fa-solid.fa-phone
+              span +33 7 60 34 27 26
+
+          h5.bandeau #[i.fa-solid.fa-user] &nbsp;ÉTAT CIVIL
+          .text-center
+            p.mb-0 20 ans
+            //- p.mb-0 Nationalité française
+            p.mb-0 Permis B
+
+          h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;COMPÉTENCES
+          div.px-3
+            +skill('JavaScript', '100%')
+              small React · React Native · Jquery · Ajax
+            +skill('HTML', '100%')
+              small HTML5 · Pug · Markdown
+            +skill('CSS', '95%')
+              small CSS3 · Bootstrap · Stylus · Sass
+            +skill('PHP', '90%')
+              small PHP 7 & 8 · Symfony · Twig · Smarty
+            +skill('Autres langages et logiciels', '85%')
+              small Python · R · Java · C# · SQL · Git · GitHub · GitLab · Jamf Pro
+            +skill('DevOps', '70%')
+              small Docker · Shell · AWS · CI/CD
+            +skill('Systèmes d\'exploitation', '90%')
+              small.my-1 #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
+
+          h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUES
+          div.px-3
+            .extra
+              b Français
+              small &nbsp; (natif)
+              +progress('100%')
+            .extra
+              b Anglais
+              small &nbsp; (TOEIC 955/990)
+              +progress('98%')
+            .extra
+              b Espagnol
+              small &nbsp; (B2)
+              +progress('50%')
+
+
+        .p-3(style='width:70%')
+          .resume_content
+            //-, le développement logiciel ou les systèmes embarqués
+            p Actuellement à la recherche d’un poste en alternance, idéalement dans #[br]la cybersécurité, d’une durée de 2 ans à compter de septembre 2023.
+            p Bilingue anglais et passionné par les sciences et l’informatique, j’ai un bon esprit d’analyse, un grand souci du détail et une forte adaptabilité face aux évolutions technologiques.
+
+            h5.title FORMATIONS
+            .flex-row
+              .col-2(style='width:13%')
+                img.mt-3(src='images/isep2.png' alt='' width='55')
+                img.mt-1(src='images/st-ex.webp' alt='' width='65')
+                img(src='images/LIL.jpg' alt='' width='60')
+              //- .col-2(style='width:13%')
+                img(src='images/isep.png' width='60' style='padding-top:2rem')
+                img.mt-4(src='images/st-ex.webp' width='65')
+                img.mt-1(src='images/LIL.jpg' width='60')
+              .col
+                p.mb-2 #[b Cycle ingénieur à l’ISEP École d’ingénieurs du numérique] (2022-2025)
+                p.mb-0 #[b Prépa intégrée à l’ISEP et Wrexham Glindŵr University] (2020-2022)
+                p.mb-0 Cycle Intégré International Anglophone ; un semestre à Wrexham :
+                p.mb-2 Développement d’applications Windows (C#) et Android (Java)
+                p.mb-0 #[b Lycée Saint Exupéry] (2019-2020) Montigny-le-Bretonneux
+                p.mb-2 Terminale S spécialité ISN (Informatique et Sciences du Numérique)
+                p #[b Lycée International de Londres] (2017-2019) Wembley, Royaume-Uni
+            //- SJA ?
+            h5.title EXPÉRIENCES PROFESSIONELLES
+            .flex-row
+              .col-2
+                img.mb-3(src='images/je.jpg' alt='' height='60')
+                img.mb-4(src='images/cardy.png' alt='' height='32')
+                img.mb-3(src='images/enoria.png' alt='' height='30')
+                img(src='images/LIL.jpg' alt='' height='40')
+              .col
+                p.mb-0 2022 - à ce jour
+                p.mb-2 #[b Consultant Junior ISEP] : solutions web et logiciels sur mesure
+                p.mb-0 Juin - Juillet 2022
+                p.mb-2 Stage de Développement Full Stack de modules Prestashop en Symfony pour les différents sites web de Cardy
+                p.mb-0 Juin - Juillet 2021
+                p.mb-2 Stage de Développement Full Stack, Symfony et Bootstrap de nouvelles fonctionnalités sur l’application Enoria
+                p.mb-0 Juin - Juillet 2019
+                p.mb-2 Stage au service informatique du Lycée International de Londres
+                p.mb-0 2017 - Août 2018
+                p Récolte de fonds, suivie d’une mission humanitaire en Équateur
+
+            h5.title CERTIFICATIONS
+            p.mb-0 Mai 2022 : #[a(href='https://www.credly.com/badges/9cdcef02-4de8-4a72-ae7d-4dd4cffef94c/public_url' style='text-decoration:none;color:navy') #[b AWS Certified Solution Architect] - Associate]
+            p.mb-0 Juillet 2021 : #[b Junior ISEP Académie] (création et développement d'une application pour iOS et Android en React Native et Symfony)
+            p.mb-0 Mars 2021 : #[b TOEIC] Reading and Listening (955/990)
+            p.mb-0 Juillet 2020 : #[b Baccalauréat S] spécialité ISN (mention Bien)
+            p Mai 2018 : #[b ISE II], Speaking & Listening (Integrated Skills in English)
+
+            h5.title LOISIRS
+            .flex-row.text-center
+              .col
+                img(src='images/programming.svg' alt='' height='70')
+                | Programmation et nouvelles technologies
+              .col
+                img(src='images/climbing.svg' alt='' height='70')
+                | Escalade
+              .col
+                img.p-2(src='images/bulb.png' alt='' height='70')
+                | Résolution de problèmes
+              .col
+                img.p-2(src='images/hackathon.png' alt='' height='70')
+                | Hackathons #[br]et CTFs
+              .col
+                img(src='images/skiing2.svg' alt='' height='70')
+                br
+                | Ski
+
+
+
+    //- .sheet
+      .resume_other
+        section.resume_section.resume_header
+          .resume_content
+            h1 Thiago Braga
+            .info-item
+              span.info-label
+                i.fa-solid.fa-location-arrow
+              span
+                | 770 Marçal de Arruda Campos St., Bauru, SP, Brazil,
+                | Zip: 17063-060
+            .info-item
+              span.info-label
+                i.fa-solid.fa-envelope
+              span contato@thiagobraga.org
+            .info-item
+              span.info-label
+                i.fa-solid.fa-phone
+              span +55 14 99165 5873
+
+        .resume_columns
+          .resume_main
+            section.resume_section
+              .resume_content
+                .resume_section-title
+                  i.fa-solid.fa-pen-to-square
+                  h4 Professional Summary
+                .other
+                  .other-info
+                    p
+                      | PHP & JavaScript developer + Devops Enthusiast with a
+                      | decade of success leading teams in delivering appropriate
+                      | technology solutions for desktop and mobile products.
+                    p
+                      | Comprehensive knowledge of enterprise architecture,
+                      | agile methodologies, remote work, cloud services and
+                      | web-based applications.
+            //- experience
+            section.resume_section
+              //- .resume_content
+              .resume_section-title
+                i.fa-solid.fa-briefcase
+                h4 Employment History
+              .xp-item
+                .xp-job
+                  | Full Stack Developer / DevOps #[span @ Grupo Tesseract]
+                  br
+                  small Bauru, Sao Paulo
+                .xp-date Apr. 2017 – current
+                .xp-detail
+                  ul
+                    li
+                      | Design, build or maintain web sites using Laravel,
+                      | Bootstrap, Vue, React and WordPress
+                    li Create scripting language tools
+                    li Automate dev, builds and deploy tasks
+                    li
+                      | Maintain understanding of current web technologies or
+                      | programming practices through continuing education,
+                      | reading and sharing knowledge
+                    li
+                      | Develop databases that support web applications and
+                      | web sites
+                    li
+                      | Develop and document style guidelines for web site
+                      | content
+                    li Recommend and implement performance improvements
+                    li
+                      | Select programming languages, design tools,
+                      | or applications
+
+              .xp-item
+                .xp-job
+                  | Full Stack Developer #[small @ Jurid Publicações Eletrônicas]
+                  br
+                  small Bauru, Sao Paulo
+                .xp-date Aug. 2018 – Apr. 2020
+                .xp-detail
+                  ul
+                    li
+                      | Build or maintain web sites using native PHP, Python
+                      | and JavaScript
+                    li
+                      | Maintain and improve production databases running on
+                      | Elasticsearch, Redis, PostgreSQL and MySQL
+                    li Provide backup and maintenance of GNU/Linux servers
+                    li Provide documentation for existent and new applications
+
+          .resume_side
+            //- skills
+            section.resume_section
+              .resume_content
+                .resume_section-title
+                  i.fa-solid.fa-align-center
+                  h4 Skills
+                .extra
+                  .extra-info
+                    | PHP
+                    br
+                    small PHP 7 · PHP 8 · Symfony
+                  +progress('90%')
+                .extra
+                  .extra-info
+                    | JavaScript
+                    br
+                    small React · React Native
+                  +progress('87%')
+                .extra
+                  .extra-info
+                    | HTML 
+                    br
+                    small HTML5 · Markdown · Pug
+                  +progress('100%')
+                .extra
+                  .extra-info
+                    | CSS
+                    br
+                    small Bootstrap · Stylus · Sass
+                  +progress('100%')
+                .extra
+                  .extra-info
+                    | DevOps
+                    br
+                    small Docker · Shell · AWS · CI/CD
+                  +progress('75%')
+                .extra
+                  .extra-info
+                    | Databases
+                    br
+                    small PostgreSQL · MySQL · Elasticsearch · Redis
+                  +progress('80%')
+                .extra
+                  .extra-info
+                    | Operating Systems
+                    br
+                    small
+                      | #[i.fa-brands.fa-windows] Windows ·
+                      | #[i.fa-brands.fa-linux] GNU/Linux ·
+                      | #[i.fa-brands.fa-apple] Mac OS
+                  +progress('90%')
+
+            //- languages
+            section.resume_section
+              .resume_content
+                .resume_section-title
+                  i.fa-solid.fa-earth-americas
+                  h4 Languages
+                .extra
+                  .extra-info Français #[small (native)]
+                  +progress('100%')
+                .extra
+                  .extra-info Anglais
+                  +progress('100%')
+                .extra
+                  .extra-info Espagnol
+                  +progress('50%')

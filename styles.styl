@@ -1,0 +1,345 @@
+// Tested colors
+// #f68931 #5695cd #8b63bf #d0465f
+$accentColor = #23609c
+$lightAccentColor = #f5f8fe
+$progressBackground = #d1d9e1
+$unicodeRange = U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+
+$bs1 = .25rem
+$bs2 = .5rem
+$bs3 = .75rem
+$bs4 = 1.5rem
+$bs5 = 3rem
+
+padding-horizontal(value)
+  padding-left value
+  padding-right value
+
+padding-vertical(value)
+  padding-top value
+  padding-bottom value
+
+margin-horizontal(value)
+  margin-left value
+  margin-right value
+
+margin-vertical(value)
+  margin-top value
+  margin-bottom value
+
+@page
+  size A4
+
+body
+  print-color-adjust exact
+  background-color #fff
+  font-family 'Source Sans Pro', sans-serif
+  font-weight 300
+  display flex
+  justify-content center
+
+.btn-print
+  z-index 1
+  position absolute
+  right 1rem
+  top 1rem
+
+.btn-pdf
+  z-index 1
+  position absolute
+  right 1rem
+  top 3.5rem
+
+.resume
+  height 100%
+  display flex
+  font-size .9rem
+  font-weight 400
+  font-family 'Source Serif Pro', serif
+  line-height 1.5
+
+  .title
+    font-family 'Lato Italic', sans-serif
+    font-weight: bold
+
+  #sidebar
+    display flex
+    flex-direction column
+    row-gap 1rem
+    padding-top 1rem
+    padding-right 0
+    background-color $lightAccentColor
+
+    #profile
+      width 170px
+      height 170px
+      border-radius 50%
+      border 7px solid $accentColor
+      align-self center
+    
+    .bandeau
+      background-color $accentColor
+      padding-vertical $bs2
+      padding-horizontal $bs3
+      color white
+      font-family 'Lato Italic', sans-serif
+      margin-bottom 0
+
+  .extra
+    margin-bottom $bs2
+    &:last-child
+      margin-bottom 0
+
+  .extra-info
+    line-height 1.2
+    small
+      color #666
+      display inline-block
+      font-size $bs3
+
+  $radus = 7px
+  .extra-details, .extra-details_progress
+    border-radius $radus
+
+  .extra-details
+    background-color $progressBackground
+    width 100%
+    height $radus
+    position relative
+
+  .extra-details_progress
+    background-color $accentColor
+    height $radus
+    position absolute
+    top 0
+    left 0
+
+  .info-item
+    margin-bottom .2rem
+    font-weight 300
+    &:last-child
+      margin-bottom 0
+
+  .info-label
+    display inline-block
+    padding-right $bs3
+    font-size 1rem
+    text-align center
+    i
+      color $accentColor
+  .resume_content
+    margin-top 1rem
+
+
+
+
+
+.resume_other
+  font-family 'Roboto', sans-serif
+  font-size .8rem
+  font-weight 400
+  line-height 1.5
+  // height 100%
+
+  h1
+    font-weight 600
+
+  h4
+    font-weight 600
+    line-height 1
+    margin-bottom 0
+
+  p
+    &:last-child
+      margin-bottom 0
+
+  ul
+    padding-left 20px
+
+  .resume_header, .resume_section
+    font-family 'Open Sans', sans-serif
+
+  .resume_header
+    padding 2rem
+    padding-bottom 0
+
+  .resume_section
+    margin-bottom $bs5
+    &:last-child
+      padding-bottom 0
+
+  .resume_section-title
+    display flex
+    align-items center
+    margin-bottom 1.43em
+    > i
+      margin-right .63em
+      font-size 1.14em
+      background-color $accentColor
+      color white
+      border-radius 50%
+      width 2.51em
+      height 2.51em
+      display flex
+      align-items center
+      justify-content center
+      line-height 1.6
+
+    > h2
+      margin-top 0
+      font-size 1.5em
+
+  .resume_columns
+    overflow hidden
+    padding 2rem
+    padding-top 0
+
+  .resume_main
+    float left
+    width 75%
+    padding-right 6em
+
+  .resume_side
+    float left
+    width 25%
+    // background-color #555
+
+  .other-info p > b
+    color #555
+
+  .info-item
+    margin-bottom .2em
+    font-weight 300
+    &:last-child
+      margin-bottom 0
+
+  .info-label
+    display inline-block
+    padding-right .63em
+    font-size 1.14em
+    min-width 2.19em
+    text-align center
+    i
+      color $accentColor
+
+  .xp-item
+    margin-bottom 4em
+    &:last-child
+      margin-bottom 0
+
+  .xp-job
+    font-size 1.14em
+    font-weight 600
+    line-height 1.25
+    span
+    small
+      font-weight 400
+    small
+      font-size .9em
+
+  .xp-date
+    font-size .8em
+    margin-top .3em
+    margin-bottom 1em
+    color $accentColor
+
+  .extra
+    margin-bottom 2em
+    &:last-child
+      margin-bottom 0
+
+  .extra-info
+    small
+      color #666
+      display inline-block
+      font-size .6rem
+
+  .extra-details, .extra-details_progress
+    border-radius 6px
+
+  .extra-details
+    margin-top $bs2
+    background-color $progressBackground
+    width 100%
+    height 5px
+    position relative
+
+  .extra-details_progress
+    background-color $accentColor
+    height 5px
+    position absolute
+    top 0
+    left 0
+
+  .lang-item
+    margin-bottom 2em
+    &:last-child
+      margin-bottom 0
+
+  .lang-label
+    width 8em
+
+@media print
+  // Override Bootstrap body rule
+  body
+    // min-width initial !important
+
+  .btn-print
+    display none !important
+
+
+@font-face
+  font-family 'Source Serif Pro'
+  font-weight 300
+  src url('/fonts/Source Serif Pro 300.woff') format('woff')
+
+@font-face
+  font-family 'Source Serif Pro'
+  font-weight 700
+  src url('/fonts/Source Serif Pro 700.woff') format('woff')
+
+@font-face
+  font-family 'Source Sans Pro'
+  font-weight 300
+  src url('/fonts/Source Sans Pro 300.woff') format('woff')
+
+@font-face
+  font-family 'Source Sans Pro'
+  font-weight 700
+  src url('/fonts/Source Sans Pro 700.woff') format('woff')
+
+@font-face 
+  font-family 'Lato Italic'
+  font-weight 300
+  src url('/fonts/Lato Italic 300.woff') format('woff')
+  
+@font-face 
+  font-family 'Lato Italic'
+  font-weight 700
+  src url('/fonts/Lato Italic 700.woff') format('woff')
+
+// Google Fonts
+// @font-face
+//   font-family 'Open Sans'
+//   font-style normal
+//   font-weight 400
+//   font-display swap
+//   unicode-range $unicodeRange
+//   src local('Open Sans Regular'), local('OpenSans-Regular'), url(https://fonts.gstatic.com/s/opensans/v16/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2')
+
+// @font-face
+//   font-family 'Roboto'
+//   font-style normal
+//   font-weight 400
+//   font-display swap
+//   unicode-range $unicodeRange
+//   src local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2')
+
+// latin
+@font-face
+  font-family 'Lato'
+  font-style normal
+  font-weight 400
+  font-display swap
+  unicode-range $unicodeRange
+  src url(https://fonts.gstatic.com/s/lato/v23/S6uyw4BMUTPHjx4wXg.woff2) format('woff2')
