@@ -2,7 +2,7 @@ mixin progress(progress)
   .extra-details
     .extra-details_progress(style={width: progress})
 
-mixin skill(title, progress)
+mixin skill(title)
   .extra
     .extra-info
       b.d-block= title
@@ -64,19 +64,19 @@ html(lang='fr')
 
           h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;COMPÉTENCES
           div.px-3
-            +skill('JavaScript', '100%')
+            +skill('JavaScript')
               small React · React Native · Jquery · Ajax
-            +skill('HTML', '100%')
+            +skill('HTML')
               small HTML5 · Pug · Markdown
-            +skill('CSS', '95%')
+            +skill('CSS')
               small CSS3 · Bootstrap · Stylus · Sass
-            +skill('PHP', '90%')
+            +skill('PHP')
               small PHP 7 & 8 · Symfony · Twig · Smarty
-            +skill('Autres langages et logiciels', '85%')
+            +skill('Autres langages et logiciels')
               small Python · R · Java · C# · SQL · Git · GitHub · GitLab · Jamf Pro
-            +skill('DevOps', '70%')
+            +skill('DevOps')
               small Docker · Shell · AWS · CI/CD
-            +skill('Systèmes d\'exploitation', '90%')
+            +skill('Systèmes d\'exploitation')
               small.my-1 #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
 
           h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUES
