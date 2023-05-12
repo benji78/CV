@@ -10,8 +10,10 @@ jobs:
     name: Deploy to S3 🚀
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: jakejarvis/s3-sync-action@master
+      - name: checkout code
+        uses: actions/checkout@master
+      - name: push to S3
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks --delete --exclude '.*/**' --exclude '**.pug'
         env:
@@ -20,4 +22,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "eu-west-3" # (Paris) optional: defaults to us-east-1
           # SOURCE_DIR: "public" # optional: defaults to entire repository
-      - run: "export AWS_PAGER=''; aws cloudfront create-invalidation --distribution-id EI49BL4HR4N5T --paths '/*';"
+      - name: invalidate cache
+        run: |
+          export AWS_PAGER=""
+          aws cloudfront create-invalidation --distribution-id EI49BL4HR4N5T --paths "/*"
