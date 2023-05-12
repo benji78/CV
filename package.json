@@ -1,6 +1,8 @@
 {
+  "name": "cv",
+  "author": "Benjamin Bordes",
   "lisence": "MIT",
   "scripts": {
-    "start": "browser-sync start --server -f \"*.css\" \"*.html\" --no-open"
+    "start": "browser-sync start --server -f \"**/*.css,**/*.html\" --no-open"
   }
 }
