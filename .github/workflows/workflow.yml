@@ -13,16 +13,14 @@ jobs:
       - name: checkout code
         uses: actions/checkout@master
       - name: push to S3
-        uses: jakejarvis/s3-sync-action@master
+        uses: kersvers/s3-sync-with-cloudfront-invalidation@v1.0.0
         with:
-          args: --follow-symlinks --delete --exclude '.*/**' --exclude '**.pug'
+          args: --follow-symlinks --delete --exclude '.*/**' --exclude '**.pug --exclude 'package.json'
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          DISTRIBUTION_ID: "EI49BL4HR4N5T"
           AWS_REGION: "eu-west-3" # (Paris) optional: defaults to us-east-1
           # SOURCE_DIR: "public" # optional: defaults to entire repository
-      - name: invalidate cache
-        run: |
-          export AWS_PAGER=""
-          aws cloudfront create-invalidation --distribution-id EI49BL4HR4N5T --paths "/*"
+          # DEST_DIR: "subdirectory" # optional defaults to bucket's root
