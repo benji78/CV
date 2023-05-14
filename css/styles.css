@@ -76,10 +76,12 @@ body {
 .resume .extra-info {
   line-height: 1.2;
 }
-.resume .extra-info small {
+.resume small {
   color: #666;
   display: inline-block;
-  font-size: 0.75rem;
+}
+.resume .experiences small {
+  display: block;
 }
 .resume .extra-details,
 .resume .extra-details_progress {
