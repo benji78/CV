@@ -12,14 +12,6 @@ body {
 .btn-print {
   z-index: 1;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
-}
-.btn-pdf {
-  z-index: 1;
-  position: absolute;
-  right: 1rem;
-  top: 3.5rem;
 }
 .img-hover {
   position: absolute;
@@ -68,7 +60,7 @@ body {
   margin-bottom: 0;
 }
 .resume .extra {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 .resume .extra:last-child {
   margin-bottom: 0;

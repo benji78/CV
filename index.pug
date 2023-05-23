@@ -6,13 +6,12 @@ mixin skill(title)
   .extra
     .extra-info
       b.d-block= title
-      .mb-3
-        block
+      block
     //- +progress(progress)
 
 mixin stylesheet(href)
   link(rel='stylesheet' href=href)
-  
+
 mixin linkout(href)
   a(rel='noopener noreferrer nofollow' style='text-decoration:none;color:navy' href=href)
     block
@@ -23,7 +22,7 @@ html(lang='fr')
   head
     meta(charset='utf-8')
     title CV Benjamin Bordes
-    link(rel='icon', href='/images/favicon.svg')
+    link(rel='icon' href='/images/favicon.svg')
     //- +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css')
     //- +stylesheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css')
     +stylesheet('/css/fontawesome.min.css')
@@ -37,17 +36,17 @@ html(lang='fr')
 
   body.A4.flex-column
     .sheet
-      button.btn.btn-print.btn-sm.btn-light(onClick='window.print()')
+      button.btn.btn-print.btn-sm.btn-light(onClick='window.print()' style='top:1rem;right:1rem')
         | #[i.fa-solid.fa-print] Print
-      button.btn.btn-print.btn-sm.btn-light(onClick="window.location='/CV Benjamin Bordes 2023.pdf'", style='top:3.4rem')
+      button.btn.btn-print.btn-sm.btn-light(onClick="window.location='/CV Benjamin Bordes 2023.pdf'" style='top:3.2rem;right:1rem')
         | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
-      button.btn.btn-print.btn-sm.btn-light.p-1.pb-0(onClick="window.location='/en'" style='top:.5rem; left:.5rem')
+      button.btn.btn-print.btn-light.p-1(onClick="window.location='/en'" style='top:.5rem;left:.5rem;height:2.125rem')
         img(src='/images/FR flag.svg' style='height: 1.5rem')
         img.img-hover(src='/images/UK flag.svg' style='height: 1.5rem')
 
       .resume
         #sidebar(style='width:30%')
-          img#profile(src='/images/Benjamin%20Bordes.jpg', alt='Benjamin Bordes')
+          img#profile(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
 
           h3.bandeau.text-center Benjamin Bordes
           .text-center
@@ -62,7 +61,7 @@ html(lang='fr')
             .info-item
               span.info-label
                 i.fa-solid.fa-phone
-              span +33 7 60 34 27 26
+              +linkout('tel:+33760342726') +33 7 60 34 27 26
             .info-item
               span.info-label
                 i.fa-brands.fa-linkedin
@@ -73,20 +72,26 @@ html(lang='fr')
 
           h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;COMPÉTENCES
           div.px-3
-            +skill('JavaScript')
-              small ReactJS · React Native · Jquery · NestJS
-            +skill('HTML')
-              small HTML5 · Pug · Markdown
-            +skill('CSS')
-              small CSS3 · Bootstrap · Stylus · Sass
-            +skill('PHP')
-              small PHP 7 & 8 · Symfony · Twig · Smarty
-            +skill('Autres langages et logiciels')
-              small Python · R · Java · C# · SQL · Git · GitHub · GitLab · Jamf Pro
+            +skill('Cybersécurité')
+              small Kali · Nmap · Wireshark · Metasploit
             +skill('DevOps')
               small Docker · Shell · AWS · CI/CD
+            +skill('Développement Web')
+              small ReactJS · React Native · Symfony · NestJS · HTML-CSS-JS · PHP
+              small Préprocesseurs : Pug · Stylus · Sass
+              small Librairies : Jquery · Bootstrap · Twig
+              //- · Tailwind
+            +skill('Base de données')
+              small MySQL · MariaDB · MongoDB
+            +skill('Data science')
+              small Python · R · MALTAB
+            +skill('Autres langages et logiciels')
+              small Java · C# · Markdown · Jamf Pro
+            +skill('Gestion de version')
+              //- code versioning/version control
+              small Git · GitHub · GitLab
             +skill('Systèmes d\'exploitation')
-              small.my-1 #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
+              small #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
 
           h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUES
           div.px-3
@@ -96,8 +101,8 @@ html(lang='fr')
               +progress('100%')
             .extra
               b Anglais
-              small &nbsp; (TOEIC 955/990)
-              +progress('98%')
+              small &nbsp; (Bilingue, TOEIC 955/990)
+              +progress('99%')
             .extra
               b Espagnol
               small &nbsp; (B2)
@@ -107,24 +112,9 @@ html(lang='fr')
         .p-3(style='width:70%')
           .resume_content
             //-, le développement logiciel ou les systèmes embarqués
-            p Actuellement à la recherche d’un poste en alternance, idéalement dans #[br]la cybersécurité, d’une durée de 2 ans à compter de septembre 2023.
+            p.mb-2 Actuellement à la recherche d’un poste en alternance, idéalement dans #[br]la Cybersécurité, d’une durée de 2 ans à compter de septembre 2023.
             p Bilingue anglais et passionné par les sciences et l’informatique, j’ai un bon esprit d’analyse, un grand souci du détail et une forte adaptabilité face aux évolutions technologiques.
 
-            h5.title FORMATIONS
-            .flex-row
-              .col-2(style='width:13%')
-                img.mt-3(src='/images/isep.png' alt='' width='55')
-                img.mt-1(src='/images/st-ex.webp' alt='' width='65')
-                img(src='/images/LIL.jpg' alt='' width='60')
-              .col
-                p.mb-2 #[b Cycle ingénieur à l’ISEP École d’ingénieurs du numérique] #[small (2022-2025)]
-                p.mb-0 #[b Prépa intégrée à l’ISEP et Wrexham Glindŵr University] #[small (2020-2022)]
-                p.mb-0 Cycle Intégré International Anglophone ; un semestre à Wrexham :
-                p.mb-2 Développement d’applications Windows (C#) et Android (Java)
-                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
-                p.mb-2 Terminale S spécialité ISN (Informatique et Sciences du Numérique)
-                p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, Royaume-Uni
-            //- SJA ?
             h5.title EXPÉRIENCES PROFESSIONNELLES
             .flex-row.experiences
               .col-2
@@ -145,28 +135,51 @@ html(lang='fr')
                 small 2017 - Août 2018
                 p Récolte de fonds, suivie d’une mission humanitaire en Équateur
 
-            h5.title CERTIFICATIONS
-            p.mb-0 Mai 2022 : #[a(href='https://www.credly.com/badges/9cdcef02-4de8-4a72-ae7d-4dd4cffef94c/public_url' style='text-decoration:none;color:navy') #[b AWS Certified Solution Architect] - Associate]
-            p.mb-0 Juillet 2021 : #[b Junior ISEP Académie] création et développement d'une application pour iOS et Android en React Native et Symfony
-            p.mb-0 Mars 2021 : #[b TOEIC] Reading and Listening (955/990)
-            p.mb-0 Juillet 2020 : #[b Baccalauréat S] spécialité ISN (mention Bien)
-            p Mai 2018 : #[b ISE II], Speaking & Listening (Integrated Skills in English)
+            h5.title FORMATIONS
+            .flex-row
+              .col-2(style='width:13%')
+                img.mt-3(src='/images/isep.png' alt='' width='55')
+                img.mt-1(src='/images/st-ex.webp' alt='' width='65')
+                img(src='/images/LIL.jpg' alt='' width='60')
+              .col
+                p.mb-2 #[b Cycle ingénieur, ISEP École d’ingénieurs du numérique] #[small (2022-2025)]
+                p.mb-0 #[b Prépa intégrée, ISEP et Wrexham Glyndŵr University] #[small (2020-2022)]
+                p.mb-0 Cycle Intégré International Anglophone ; un semestre à Wrexham :
+                p.mb-2 Développement d’applications Windows (C#) et Android (Java)
+                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
+                p.mb-2 Baccalauréat S spécialité ISN (Informatique et Sciences du Numérique)
+                p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, Royaume-Uni
+            //- SJA ?
 
-            h5.title LOISIRS
+            h5.title CERTIFICATIONS
+            p.mb-0 #[small Mai 2022 :] #[a(href='https://www.credly.com/badges/9cdcef02-4de8-4a72-ae7d-4dd4cffef94c/public_url' style='text-decoration:none;color:navy') #[b AWS Certified Solution Architect] - Associate]
+            p #[small Juillet 2021 :] #[b Junior ISEP Académie] création et développement d'une application pour iOS et Android en React Native avec un backend en Symfony
+            //- p #[small Mai 2018 :] #[b ISE II], Speaking & Listening (Integrated Skills in English)
+
+            h5.title HACKATHONS ET CTFs
+            p.mb-0 #[small Avril 2023 :] #[b Wave Game] Challenge Cyber technique offensif et défensif sur AWS
+            //- Wavestone
+            p.mb-0 #[small Mars 2023 :] #[b Master Dev France] le plus grand Concours de code live de France
+            p.mb-0 #[small Octobre 2022 :] #[b CTF Break the Code IDF] sur le thème du numérique responsable
+            //- Sopra Steria
+            p #[small Octobre 2022 :] #[b Hackathon Green Code] Développement logiciel Eco-responsable
+            //- JE, 3DS outscale, Sagemcom
+
+            h5.title.mb-0 LOISIRS
             .flex-row.text-center
               .col
-                img(src='/images/programming.svg' alt='' height='65')
-                p Programmation et nouvelles technologies
+                img(src='/images/programming.svg' alt='' height='50')
+                p.small Programmation et nouvelles technologies
               .col
-                img(src='/images/climbing.svg' alt='' height='65')
-                p Escalade
+                img(src='/images/climbing.svg' alt='' height='50')
+                p.small Escalade
               .col
-                img.p-2(src='/images/bulb.png' alt='' height='65')
-                p Résolution de problèmes
+                img.p-1(src='/images/bulb.png' alt='' height='50')
+                p.small Résolution de problèmes
               .col
-                img.p-2(src='/images/hackathon.png' alt='' height='65')
-                p Hackathons #[br]et CTFs
-              .col
-                img.p-1(src='/images/skiing.svg' alt='' height='65')
+                img.p-1(src='/images/hackathon.png' alt='' height='50')
+                p.small Hackathons #[br]et CTFs
+              //- .col
+                img(src='/images/skiing.svg' alt='' height='50')
                 br
-                p Ski
+                p.small Ski

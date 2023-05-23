@@ -6,13 +6,12 @@ mixin skill(title)
   .extra
     .extra-info
       b.d-block= title
-      .mb-3
-        block
+      block
     //- +progress(progress)
 
 mixin stylesheet(href)
   link(rel='stylesheet' href=href)
-  
+
 mixin linkout(href)
   a(rel='noopener noreferrer nofollow' style='text-decoration:none;color:navy' href=href)
     block
@@ -37,11 +36,11 @@ html(lang='en')
 
   body.A4.flex-column
     .sheet
-      button.btn.btn-print.btn-sm.btn-light(onClick='window.print()')
+      button.btn.btn-print.btn-sm.btn-light(onClick='window.print()' style='top:1rem;right:1rem')
         | #[i.fa-solid.fa-print] Print
-      button.btn.btn-print.btn-sm.btn-light(onClick="window.location='/en/CV Benjamin Bordes en.pdf'" style='top:3.4rem')
+      button.btn.btn-print.btn-sm.btn-light(onClick="window.location='/en/CV Benjamin Bordes en.pdf'" style='top:3.2rem;right:1rem')
         | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
-      button.btn.btn-print.btn-sm.btn-light.p-1.pb-0(onClick="window.location='/'" style='top:.5rem; left:.5rem')
+      button.btn.btn-print.btn-light.p-1(onClick="window.location='/'" style='top:.5rem; left:.5rem;height:2.125rem')
         img(src='/images/UK flag.svg' style='height: 1.5rem')
         img.img-hover(src='/images/FR flag.svg' style='height: 1.5rem')
 
@@ -62,31 +61,37 @@ html(lang='en')
             .info-item
               span.info-label
                 i.fa-solid.fa-phone
-              span +33 7 60 34 27 26
+              +linkout('tel:+33760342726') +33 7 60 34 27 26
             .info-item
               span.info-label
                 i.fa-brands.fa-linkedin
               +linkout('https://www.linkedin.com/in/benjamin-bordes') Benjamin-Bordes
             p.mb-0 20 years old
             //- p.mb-0 Nationalité française
-            p.mb-0 Driving lisence
+            p.mb-0 Driving licence
 
           h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;SKILLS
           div.px-3
-            +skill('JavaScript')
-              small ReactJS · React Native · Jquery · NestJS
-            +skill('HTML')
-              small HTML5 · Pug · Markdown
-            +skill('CSS')
-              small CSS3 · Bootstrap · Stylus · Sass
-            +skill('PHP')
-              small PHP 7 & 8 · Symfony · Twig · Smarty
-            +skill('Autres langages et logiciels')
-              small Python · R · Java · C# · SQL · Git · GitHub · GitLab · Jamf Pro
+            +skill('Cybersecurity')
+              small Kali · Nmap · Wireshark · Metasploit
             +skill('DevOps')
               small Docker · Shell · AWS · CI/CD
-            +skill('Systèmes d\'exploitation')
-              small.my-1 #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
+            +skill('Web Development')
+              small ReactJS · React Native · Symfony · NestJS · HTML-CSS-JS · PHP
+              small Preprocessors : Pug · Stylus · Sass
+              small Libraries : Jquery · Bootstrap · Twig
+              //- · Tailwind
+            +skill('Databases')
+              small MySQL · MariaDB · MongoDB
+            +skill('Data science')
+              small Python · R · MALTAB
+            +skill('Other languages et softwares')
+              small Java · C# · Markdown · Jamf Pro
+            +skill('Version control')
+              //- code versioning
+              small Git · GitHub · GitLab
+            +skill('Operating systems')
+              small #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
 
           h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUAGES
           div.px-3
@@ -96,7 +101,7 @@ html(lang='en')
               +progress('100%')
             .extra
               b English
-              small &nbsp; (TOEIC 955/990)
+              small &nbsp; (Bilingual, TOEIC 955/990)
               +progress('98%')
             .extra
               b Spanish
@@ -107,25 +112,10 @@ html(lang='en')
         .p-3(style='width:70%')
           .resume_content
             //-, le développement logiciel ou les systèmes embarqués
-            p Currently looking for a 2 years aprentiship position in cybersecurity,#[br]with a 3-day/2-day work-study rithm starting in September 2023.
+            p.mb-2 Currently looking for a 2 years apprenticeship position in Cybersecurity,#[br]with a 3-day/2-day work-study rhythm starting in September 2023.
             p Native French bilingual in English and passionate about science and IT,#[br]I have a good analytical mind, a great attention to detail and a strong#[br]adaptability to technological developments.
 
-            h5.title EDUCATION
-            .flex-row
-              .col-2(style='width:13%')
-                img.mt-3(src='/images/isep.png' alt='' width='55')
-                img.mt-1(src='/images/st-ex.webp' alt='' width='65')
-                img(src='/images/LIL.jpg' alt='' width='60')
-              .col
-                p.mb-2 #[b Engeneering cycle at ISEP digital ingeneering school] #[small (2022-2025)] Paris
-                p.mb-0 #[b Prépa intégrée at ISEP and Wrexham Glindŵr University] #[small (2020-2022)]
-                p.mb-0 International Integrated Cycle in English ; one semester at Wrexham :
-                p.mb-2 Development of Windows (C#) and Android (Java) applications
-                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
-                p.mb-2 Terminale Scientific, ISN speciality (Computer and Digital Sciences)
-                p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, United-Kingdom
-            //- SJA ?
-            h5.title PORFESSIONAL EXPERIENCES
+            h5.title PROFESSIONAL EXPERIENCES
             .flex-row.experiences
               .col-2
                 img.mt-2.mb-3(src='/images/je.jpg' alt='' height='60')
@@ -135,7 +125,7 @@ html(lang='en')
               .col
                 small 2022 - now
                 p.mb-2 #[b Junior ISEP Consultant] : tailor-made softwares and web solutions
-                  | #[br]Devlopment of a recruitment PWA in ReactJS and NestJS
+                  | #[br]Development of a recruitment PWA in ReactJS and NestJS
 
                 //- Mission de développement d'un site de recrutement en ReactJS et NestJS avec une base de données MongoDB.
                 small May - July 2022
@@ -146,29 +136,52 @@ html(lang='en')
                 p.mb-2 #[b Internship in the Lycée International de Londres' IT department]
                 small 2017 - Août 2018
                 p Fundraising, followed by a humanitarian mission in Ecuador
+            
+            h5.title EDUCATION
+            .flex-row
+              .col-2(style='width:13%')
+                img.mt-3(src='/images/isep.png' alt='' width='55')
+                img.mt-1(src='/images/st-ex.webp' alt='' width='65')
+                img(src='/images/LIL.jpg' alt='' width='60')
+              .col
+                p.mb-2 #[b Engineering cycle at ISEP digital engineering school] #[small (2022-2025)] Paris
+                p.mb-0 #[b Prépa intégrée at ISEP and Wrexham Glyndŵr University] #[small (2020-2022)]
+                p.mb-0 International Integrated Cycle in English ; one semester at Wrexham :
+                p.mb-2 Development of Windows (C#) and Android (Java) applications
+                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
+                p.mb-2 Scientific Baccalaureate, ISN speciality (Computer and digital sciences)
+                p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, United-Kingdom
+            //- SJA ?
 
             h5.title CERTIFICATIONS
-            p.mb-0 May 2022 : #[a(href='https://www.credly.com/badges/9cdcef02-4de8-4a72-ae7d-4dd4cffef94c/public_url' style='text-decoration:none;color:navy') #[b AWS Certified Solution Architect] - Associate]
-            p.mb-0 July 2021 : #[b Junior ISEP Académie] (creation and development of an iOS and Android application with a React Native front end and a Symfony back end)
-            p.mb-0 March 2021 : #[b TOEIC] Reading and Listening (955/990)
-            p.mb-0 July 2020 : #[b Baccalauréat S], ISN speciality
-            p May 2018 : #[b ISE II], Speaking & Listening (Integrated Skills in English)
+            p.mb-0 #[small May 2022 :] #[a(href='https://www.credly.com/badges/9cdcef02-4de8-4a72-ae7d-4dd4cffef94c/public_url' style='text-decoration:none;color:navy') #[b AWS Certified Solution Architect] - Associate]
+            p #[small July 2021 :] #[b Junior ISEP Académie] creation and development of an iOS and Android application with a React Native front end and a Symfony back end
+            //- p #[small May 2018 :] #[b ISE II], Speaking & Listening (Integrated Skills in English)
 
-            h5.title HOBBIES
+            h5.title HACKATHONS AND CTFs
+            p.mb-0 #[small April 2023 :] #[b Wave Game] Offensive and defensive cyber technical challenge on AWS
+            //- Wavestone
+            p.mb-0 #[small March 2023 :] #[b Master Dev France] the biggest live code contest in France
+            p.mb-0 #[small Octobre 2022 :] #[b CTF Break the Code IDF] on the theme of responsible digital
+            //- Sopra Steria
+            p #[small Octobre 2022 :] #[b Hackathon Green Code] Eco-conscious software development
+            //- JE, 3DS outscale, Sagemcom
+
+            h5.title.mb-0 HOBBIES
             .flex-row.text-center
               .col
-                img(src='/images/programming.svg' alt='' height='65')
+                img(src='/images/programming.svg' alt='' height='50')
                 p Programming and new technologies
               .col
-                img(src='/images/climbing.svg' alt='' height='65')
+                img(src='/images/climbing.svg' alt='' height='50')
                 p Rock climbing
               .col
-                img.p-2(src='/images/hackathon.png' alt='' height='65')
+                img.p-1(src='/images/hackathon.png' alt='' height='50')
                 p Hackathons #[br]and CTFs
               .col
-                img.p-2(src='/images/bulb.png' alt='' height='65')
+                img.p-1(src='/images/bulb.png' alt='' height='50')
                 p Problem solving
-              .col
-                img.p-1(src='/images/skiing.svg' alt='' height='65')
+              //- .col
+                img.p-1(src='/images/skiing.svg' alt='' height='50')
                 br
                 p Skiing

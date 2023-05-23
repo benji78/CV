@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width, initial-scale=1.0">
+  <title>Page not found</title>
+  <link rel="icon" href="/images/favicon.svg">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Ubuntu:400,500&text=OIBabcdefghijklmnopqrstuvwxyz04…!" />
+  <style>
+    *,
+    :after,
+    :before {
+      box-sizing: border-box
+    }
+
+    .btn {
+      background: transparent;
+      color: #FFFFFF;
+      padding: 12px 30px;
+      border: solid 2px #FFFFFF;
+      border-radius: 100px;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.5;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      vertical-align: middle;
+      touch-action: manipulation;
+      user-select: none;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .btn:hover {
+      background-color: rgba(70, 70, 70, 0.25);
+      border-color: #EAEAEA;
+    }
+
+    .btn:active:focus {
+      box-shadow: 0 0 0 .25rem rgba(180, 180, 180, 0.5);
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font: inherit;
+      font-size: 100%;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      width: 100%;
+      background: linear-gradient(0deg, #23609c 50%, #000D24 100%);
+    }
+
+    #content-text {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      text-align: center;
+      font-family: Ubuntu, sans-serif;
+      width: 100%;
+      align-self: center;
+    }
+
+    #big-404 {
+      color: rgba(0, 0, 0, 0.15);
+      font-size: 250px;
+      font-weight: 500;
+      left: 50%;
+      letter-spacing: 1rem;
+      position: absolute;
+      transform: translateX(-50%);
+      user-select: none;
+    }
+
+    #oops {
+      color: #ffaa4a;
+      font-size: 60px;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    #you-lost {
+      color: #FFFFFF;
+      font-size: 25px;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    @media only screen and (max-width:767px) {
+      #big-404 {
+        letter-spacing: 0
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content-text">
+    <div id="big-404">404</div>
+    <div id="oops">Oops…</div>
+    <div id="you-lost">It seems you are lost!</div>
+
+    <a href="/" class="btn">Back home</a>
+  </div>
+</body>
+
+</html>
