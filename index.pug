@@ -38,9 +38,9 @@ html(lang='fr')
     .sheet
       button.btn.btn-print.btn-sm.btn-light(onClick='window.print()' style='top:1rem;right:1rem')
         | #[i.fa-solid.fa-print] Print
-      button.btn.btn-print.btn-sm.btn-light(onClick="window.location='/CV Benjamin Bordes 2023.pdf'" style='top:3.2rem;right:1rem')
+      a.btn.btn-print.btn-sm.btn-light(href='/CV Benjamin Bordes 2023.pdf' style='top:3.2rem;right:1rem')
         | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
-      button.btn.btn-print.btn-light.p-1(onClick="window.location='/en'" style='top:.5rem;left:.5rem;height:2.125rem')
+      a.btn.btn-print.btn-light.p-1(href='/en' style='top:.5rem;left:.5rem;height:2.125rem')
         img(src='/images/FR flag.svg' style='height: 1.5rem')
         img.img-hover(src='/images/UK flag.svg' style='height: 1.5rem')
 
