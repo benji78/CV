@@ -47,7 +47,8 @@ html(lang='en')
 
       .resume
         #sidebar(style='width:30%')
-          img#profile(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
+          a#profile(href='https://bbordes.fr')
+            img#profile(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
 
           h3.bandeau.text-center Benjamin Bordes
           .text-center
@@ -112,19 +113,20 @@ html(lang='en')
 
         .p-3(style='width:70%')
           .resume_content
-            //-, le développement logiciel ou les systèmes embarqués
-            p.mb-2 Currently looking for a 2 years apprenticeship position in Cybersecurity,#[br]with a 3-day/2-day work-study rhythm starting in September 2023.
-            p Native French bilingual in English and passionate about science and IT,#[br]I have a good analytical mind, a great attention to detail and a strong#[br]adaptability to technological developments.
+            p.mb-2 Native French bilingual in English and passionate about science and IT,#[br]I have a good analytical mind, a great attention to detail and a strong#[br]adaptability to technological developments.
 
             h5.title PROFESSIONAL EXPERIENCES
             .flex-row.experiences
               .col-2
-                img.mt-2.mb-3(src='/images/je.jpg' alt='' height='60')
+                img.ms-1(src='/images/anfsi.jpg' alt='' height='70')
+                img.mb-3(src='/images/je.jpg' alt='' height='60')
                 img.mb-4(src='/images/cardy.png' alt='' height='32')
                 img.mb-3(src='/images/enoria.png' alt='' height='30')
                 img(src='/images/LIL.jpg' alt='' height='40')
               .col
-                small 2022 - now
+                small septembre 2023 - to this day
+                p.mb-2 #[b DevOps apprenticeship at ANFSI]#[small (Agence du Numérique des Forces de Sécurité Intérieure)]
+                small 2022 - to this day
                 p.mb-2 #[b Junior ISEP Consultant] : tailor-made softwares and web solutions
                   | #[br]Development of a recruitment PWA in ReactJS and NestJS
 
