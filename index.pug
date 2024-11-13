@@ -39,7 +39,7 @@ html(lang='fr')
     .sheet
       button.btn.btn-print.btn-sm.btn-light(onClick='window.print()' style='top:1rem;right:1rem')
         | #[i.fa-solid.fa-print] Print
-      a.btn.btn-print.btn-sm.btn-light(href='/CV Benjamin Bordes 2023.pdf' style='top:3.2rem;right:1rem')
+      a.btn.btn-print.btn-sm.btn-light(href='/CV Benjamin Bordes 2024.pdf' style='top:3.2rem;right:1rem')
         | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
       a.btn.btn-print.btn-light.p-1(href='/en' style='top:.5rem;left:.5rem;height:2.125rem')
         img(src='/images/FR flag.svg' style='height: 1.5rem')
@@ -48,7 +48,7 @@ html(lang='fr')
       .resume
         #sidebar(style='width:30%')
           a#profile(href='https://bbordes.fr')
-            img#profile(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
+            img(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
 
           h3.bandeau.text-center Benjamin Bordes
           .text-center
@@ -68,32 +68,34 @@ html(lang='fr')
               span.info-label
                 i.fa-brands.fa-linkedin
               +linkout('https://www.linkedin.com/in/benjamin-bordes') Benjamin-Bordes
-            p.mb-0 21 ans
+            p.mb-0 22 ans
             //- p.mb-0 Nationalité française
             p.mb-0 Permis B
 
           h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;COMPÉTENCES
           div.px-3
-            +skill('Cybersécurité')
-              small Kali · Nmap · Wireshark · Metasploit
+            +skill('Cloud')
+              small Kubernetes · Helm · AWS · GCP
             +skill('DevOps')
-              small Docker · Shell · AWS · CI/CD
+              small Docker · Proxmox · Harbor · Nexus · Ansible · Terraform · Shell · CI/CD
+            +skill('Cybersécurité')
+              small Nmap · Wireshark · Metasploit
             +skill('Développement Web')
-              small ReactJS · React Native · Symfony · NestJS · HTML-CSS-JS · PHP
-              small Préprocesseurs : Pug · Stylus · Sass
-              small Librairies : Jquery · Bootstrap · Twig
-              //- · Tailwind
+              small SvelteKit · React · Nest · React Native · Symfony · Express · Tailwind
+              //-  · HTML-CSS-JS · PHP
+              //- small Préprocesseurs : Pug · Stylus · Sass
+              //- small Librairies : Jquery · Bootstrap · Twig
             +skill('Base de données')
-              small MySQL · MariaDB · MongoDB
-            +skill('Data science')
-              small Python · R · MALTAB
+              small PostgreSQL · MongoDB · MariaDB
+            //- +skill('Data science')
             +skill('Autres langages et logiciels')
-              small Java · C# · Markdown · Jamf Pro
-            +skill('Gestion de version')
+              small Java · C# · Markdown · Confluence · Python · Blender · Unity · Jamf Pro
               //- code versioning/version control
+            +skill('Gestion de version')
               small Git · GitHub · GitLab
             +skill('Systèmes d\'exploitation')
-              small #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
+              small #[i.fa-brands.fa-linux] #[b Linux] · #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-apple] Mac OS
+              <!--I use Arch btw!-->
 
           h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUES
           div.px-3
@@ -127,7 +129,7 @@ html(lang='fr')
                 img(src='/images/LIL.jpg' alt='' height='40')
               .col
                 small septembre 2023 - à ce jour
-                p.mb-2 #[b Ingénieur DevOps à l'ANFSI en alternance]#[small (Agence du Numérique des Forces de Sécurité Intérieure)]
+                p.mb-2 #[b Ingénieur Plateforme/DevOps en alternance à l'ANFSI]#[small (Agence du Numérique des Forces de Sécurité Intérieure)]
                 small 2022 - à ce jour
                 p.mb-2 #[b Consultant Junior ISEP] : solutions web et logiciels sur mesure
                   | #[br]Développement d'une PWA de recrutement en ReactJS et NestJS
@@ -152,7 +154,7 @@ html(lang='fr')
                 p.mb-0 #[b Prépa intégrée, ISEP et Wrexham Glyndŵr University] #[small (2020-2022)]
                 p.mb-0 Cycle Intégré International Anglophone ; un semestre à Wrexham :
                 p.mb-2 Développement d’applications Windows (C#) et Android (Java)
-                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
+                p.mb-0 #[b Lycée Saint-Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
                 p.mb-2 Baccalauréat S spécialité ISN (Informatique et Sciences du Numérique)
                 p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, Royaume-Uni
             //- SJA ?

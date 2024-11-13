@@ -39,7 +39,7 @@ html(lang='en')
     .sheet
       button.btn.btn-print.btn-sm.btn-light(onClick='window.print()' style='top:1rem;right:1rem')
         | #[i.fa-solid.fa-print] Print
-      a.btn.btn-print.btn-sm.btn-light(href='/en/CV Benjamin Bordes en.pdf' style='top:3.2rem;right:1rem')
+      a.btn.btn-print.btn-sm.btn-light(href='/en/CV Benjamin Bordes 2024.en.pdf' style='top:3.2rem;right:1rem')
         | #[i.fa-solid.fa-file-pdf] &nbsp;PDF
       a.btn.btn-print.btn-light.p-1(href='/' style='top:.5rem; left:.5rem;height:2.125rem')
         img(src='/images/UK flag.svg' style='height: 1.5rem')
@@ -48,7 +48,7 @@ html(lang='en')
       .resume
         #sidebar(style='width:30%')
           a#profile(href='https://bbordes.fr')
-            img#profile(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
+            img(src='/images/Benjamin%20Bordes.jpg' alt='Benjamin Bordes')
 
           h3.bandeau.text-center Benjamin Bordes
           .text-center
@@ -68,32 +68,34 @@ html(lang='en')
               span.info-label
                 i.fa-brands.fa-linkedin
               +linkout('https://www.linkedin.com/in/benjamin-bordes') Benjamin-Bordes
-            p.mb-0 21 years old
+            p.mb-0 22 years old
             //- p.mb-0 Nationalité française
             p.mb-0 Driving licence
 
           h5.bandeau #[i.fa-solid.fa-laptop-code] &nbsp;SKILLS
           div.px-3
-            +skill('Cybersecurity')
-              small Kali · Nmap · Wireshark · Metasploit
+            +skill('Cloud')
+              small Kubernetes · Helm · AWS · GCP
             +skill('DevOps')
-              small Docker · Shell · AWS · CI/CD
+              small Docker · Proxmox · Harbor · Nexus · Ansible · Terraform · Shell · CI/CD
+            +skill('Cybersecurity')
+              small Nmap · Wireshark · Metasploit
             +skill('Web Development')
-              small ReactJS · React Native · Symfony · NestJS · HTML-CSS-JS · PHP
-              small Preprocessors : Pug · Stylus · Sass
-              small Libraries : Jquery · Bootstrap · Twig
-              //- · Tailwind
-            +skill('Databases')
-              small MySQL · MariaDB · MongoDB
-            +skill('Data science')
-              small Python · R · MALTAB
+              small SvelteKit · React · Nest · React Native · Symfony · Express · Tailwind
+              //-  · HTML-CSS-JS · PHP
+              //- small Preprocessors : Pug · Stylus · Sass
+              //- small Libraries : Jquery · Bootstrap · Twig
+            +skill('Database')
+              small PostgreSQL · MongoDB · MariaDB
+            //- +skill('Data science')
             +skill('Other languages et softwares')
-              small Java · C# · Markdown · Jamf Pro
-            +skill('Version control')
+              small Java · C# · Markdown · Confluence · Python · Blender · Unity · Jamf Pro
               //- code versioning
+            +skill('Version control')
               small Git · GitHub · GitLab
             +skill('Operating systems')
-              small #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-linux] Linux · #[i.fa-brands.fa-apple] Mac OS
+              small #[i.fa-brands.fa-linux] #[b Linux] · #[i.fa-brands.fa-windows] Windows · #[i.fa-brands.fa-apple] Mac OS
+              <!--I use Arch btw!-->
 
           h5.bandeau #[i.fa-solid.fa-earth-americas] &nbsp;LANGUAGES
           div.px-3
@@ -104,7 +106,7 @@ html(lang='en')
             .extra
               b English
               small &nbsp; (Bilingual, TOEIC 960/990)
-              +progress('98%')
+              +progress('99%')
             .extra
               b Spanish
               small &nbsp; (B2)
@@ -113,7 +115,9 @@ html(lang='en')
 
         .p-3(style='width:70%')
           .resume_content
-            p.mb-2 Native French bilingual in English and passionate about science and IT,#[br]I have a good analytical mind, a great attention to detail and a strong#[br]adaptability to technological developments.
+            p.mb-2 Native French bilingual in English and passionate about science and IT,
+              | #[br]I have a good analytical mind, a great attention to detail and a strong
+              | #[br]adaptability to technological advances.
 
             h5.title PROFESSIONAL EXPERIENCES
             .flex-row.experiences
@@ -125,12 +129,10 @@ html(lang='en')
                 img(src='/images/LIL.jpg' alt='' height='40')
               .col
                 small septembre 2023 - to this day
-                p.mb-2 #[b DevOps apprenticeship at ANFSI]#[small (Agence du Numérique des Forces de Sécurité Intérieure)]
+                p.mb-2 #[b Platform/DevOps engineer apprentice at ANFSI]#[small (Agence du Numérique des Forces de Sécurité Intérieure)]
                 small 2022 - to this day
                 p.mb-2 #[b Junior ISEP Consultant] : tailor-made softwares and web solutions
                   | #[br]Development of a recruitment PWA in ReactJS and NestJS
-
-                //- Mission de développement d'un site de recrutement en ReactJS et NestJS avec une base de données MongoDB.
                 small May - July 2022
                 p.mb-2 #[b Full Stack development Internship] of Prestashop modules in Symfony for different websites owned by Cardy
                 small June - July 2021
@@ -139,7 +141,7 @@ html(lang='en')
                 p.mb-2 #[b Internship in the Lycée International de Londres' IT department]
                 small 2017 - Août 2018
                 p Fundraising, followed by a humanitarian mission in Ecuador
-            
+
             h5.title EDUCATION
             .flex-row
               .col-2(style='width:13%')
@@ -149,9 +151,9 @@ html(lang='en')
               .col
                 p.mb-2 #[b Engineering cycle at ISEP digital engineering school] #[small (2022-2025)] Paris
                 p.mb-0 #[b Prépa intégrée at ISEP and Wrexham Glyndŵr University] #[small (2020-2022)]
-                p.mb-0 International Integrated Cycle in English ; one semester at Wrexham :
+                p.mb-0 International Integrated Cycle in English ; one semester in Wrexham:
                 p.mb-2 Development of Windows (C#) and Android (Java) applications
-                p.mb-0 #[b Lycée Saint Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
+                p.mb-0 #[b Lycée Saint-Exupéry] #[small (2019-2020)] Montigny-le-Bretonneux, France
                 p.mb-2 Scientific Baccalaureate, ISN speciality (Computer and digital sciences)
                 p #[b Lycée International de Londres] #[small (2017-2019)] Wembley, United-Kingdom
             //- SJA ?
@@ -174,17 +176,17 @@ html(lang='en')
             .flex-row.text-center
               .col
                 img(src='/images/programming.svg' alt='' height='50')
-                p Programming and new technologies
+                p.small Programming and new technologies
               .col
                 img(src='/images/climbing.svg' alt='' height='50')
-                p Rock climbing
-              .col
-                img.p-1(src='/images/hackathon.png' alt='' height='50')
-                p Hackathons #[br]and CTFs
+                p.small Rock climbing
               .col
                 img.p-1(src='/images/bulb.png' alt='' height='50')
-                p Problem solving
+                p.small Problem solving
+              .col
+                img.p-1(src='/images/hackathon.png' alt='' height='50')
+                p.small Hackathons #[br]and CTFs
               //- .col
                 img.p-1(src='/images/skiing.svg' alt='' height='50')
                 br
-                p Skiing
+                p.small Skiing
